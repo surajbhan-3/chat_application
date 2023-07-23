@@ -17,6 +17,9 @@ const app=express()
  
  
  const server = http.createServer(app)
+ app.get("/",(req,res)=>{
+           res.send("Welcome to home page")
+ })
 
  app.get("/chat/frontend", async(req,res)=>{
  
@@ -55,7 +58,7 @@ io.on("connection",(socket)=>{
       
 
       socket.on("disconnect",()=>{
-        socket.broadcast.emit("user-disconnected",user=users[socket.id]);
+        socket.broadcast.emit("user-disconnected",users=users[socket.id]);
          delete users[socket.id];
          io.emit("user-list",users)
 

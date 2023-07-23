@@ -1,5 +1,6 @@
 
-const  socket= io("ws://localhost:4500",{transports:["websocket"]})
+// const  socket= io("ws://localhost:4500",{transports:["websocket"]})
+const  socket= io("ws://cha-application.onrender.com",{transports:["websocket"]})
 
 
 var username;
@@ -14,9 +15,9 @@ var user_msg=document.querySelector('#user-msg')
 const emp=JSON.parse(sessionStorage.getItem("user"))
 console.log(emp, "dsklfds")
 
-do{
-    username=prompt("Enter your Name; ")
-}while(!username)
+// do{
+//     username=prompt("Enter your Name; ")
+// }while(!username)
 
 
 
